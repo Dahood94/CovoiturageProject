@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class DataSource {
     String myDriver = "com.mysql.jdbc.Driver";
 
-    String url = "jdbc:mysql://localhost/********";
+    String url = "jdbc:mysql://localhost/testCovoiturage";
 
     String login = "root";
     String password = "";
@@ -27,7 +27,7 @@ public class DataSource {
         connection=DriverManager.getConnection(url,login,password);
         System.out.println("connexion établie");    
         }catch(SQLException e){
-            e.printStackTrace();
+//            e.printStackTrace();
             System.out.println("erreur à la connexion à la base des données");
 }
     }

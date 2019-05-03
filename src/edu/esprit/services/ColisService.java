@@ -30,7 +30,7 @@ public class ColisService implements IServiceColis {
     public void create(Colis colis) {
         try {
 
-            String req = "INSERT INTO colis (hauteur, largeur, longueur, poids, unite, typeColis, description, idMembre, dateDepart, datePublication, pointDepart, pointArrive, toleranceTime, prix) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String req = "INSERT INTO colis (hauteur, largeur, longueur, poids, unite, typeColis, description, prix, idMembre, dateDepart, datePublication, pointDepart, pointArrive, toleranceTime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement st = conn.prepareStatement(req, Statement.RETURN_GENERATED_KEYS);
 
@@ -47,7 +47,7 @@ public class ColisService implements IServiceColis {
             st.setTimestamp(11, colis.getDatePublication());
             st.setString(12, colis.getPointDepart());
             st.setString(13, colis.getPointArrive());
-            st.setBoolean(14, colis.isToleranceTime());
+            st.setString(14, colis.isToleranceTime());
 
             st.executeUpdate();
 
@@ -75,7 +75,7 @@ public class ColisService implements IServiceColis {
             st.setTimestamp(11, colis.getDatePublication());
             st.setString(12, colis.getPointDepart());
             st.setString(13, colis.getPointArrive());
-            st.setBoolean(14, colis.isToleranceTime());
+            st.setString(14, colis.isToleranceTime());
 
             st.setInt(15, colis.getIdColis());
 
@@ -113,7 +113,7 @@ public class ColisService implements IServiceColis {
                 c.setDatePublication(resultSet1.getTimestamp("datePublication"));
                 c.setPointDepart(resultSet1.getString("pointDepart"));
                 c.setPointArrive(resultSet1.getString("pointArrive"));
-                c.setToleranceTime(resultSet1.getBoolean("toleranceTime"));
+                c.setToleranceTime(resultSet1.getString("toleranceTime"));
             }
 
         } catch (SQLException e) {
@@ -148,7 +148,7 @@ public class ColisService implements IServiceColis {
                 c.setDatePublication(resultSet1.getTimestamp("datePublication"));
                 c.setPointDepart(resultSet1.getString("pointDepart"));
                 c.setPointArrive(resultSet1.getString("pointArrive"));
-                c.setToleranceTime(resultSet1.getBoolean("toleranceTime"));
+                c.setToleranceTime(resultSet1.getString("toleranceTime"));
            coliss.add(c);
             }
             } catch (SQLException e) {

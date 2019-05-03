@@ -10,7 +10,7 @@ package edu.esprit.utils;
  * @author hanajjar
  */
 public enum UnitePoids {
-    kg (" Kilogrammes") , mg ("milligrammes");
+    Kilogrammes ("Kilogrammes") , Milligrammes ("Milligrammes");
     
     String unite;
 

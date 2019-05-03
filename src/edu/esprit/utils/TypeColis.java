@@ -10,7 +10,7 @@ package edu.esprit.utils;
  * @author hanajjar
  */
 public enum TypeColis {
-    envp ("Enveloppe") , col("Colis") , pal("Palette");
+    Enveloppe ("Enveloppe") , Colis("Colis") , Palette("Palette");
     
     String type;
 

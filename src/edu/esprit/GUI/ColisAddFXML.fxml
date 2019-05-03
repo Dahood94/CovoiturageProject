@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.controller.ColisAddFXMLController">
+   <children>
+      <Button layoutX="448.0" layoutY="622.0" mnemonicParsing="false" onAction="#ajouterDemande" text="Ajouter une demande" />
+      <AnchorPane layoutX="66.0" layoutY="70.0" prefHeight="533.0" prefWidth="899.0">
+         <children>
+            <Pane layoutX="117.0" layoutY="14.0" prefHeight="284.0" prefWidth="665.0">
+               <children>
+                  <TextField id="tbH" fx:id="tbH" layoutX="28.0" layoutY="34.0" promptText="Hauteur en cm " />
+                  <TextField fx:id="tbLargeur" layoutX="262.0" layoutY="34.0" promptText="Largeur en cm" />
+                  <TextField fx:id="tbLongueur" layoutX="482.0" layoutY="34.0" promptText="Longueur en cm" />
+                  <TextField fx:id="tbPoids" layoutX="28.0" layoutY="81.0" promptText="Poids" />
+                  <Accordion layoutX="245.0" layoutY="88.0" />
+                  <ChoiceBox fx:id="chUnite" layoutX="261.0" layoutY="81.0" prefWidth="150.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ChoiceBox>
+                  <ChoiceBox fx:id="chTypeColis" layoutX="481.0" layoutY="81.0" prefWidth="150.0" />
+                  <TextArea fx:id="tfDescription" layoutX="28.0" layoutY="135.0" prefHeight="135.0" prefWidth="606.0" promptText="Décrivez l’objet à envoyer le plus précisément possible ( Nature de l’objet, etc.) et donnez des détails sur les modalités préférés de transport ( lieu du rendez-vous, lieu de dépôt etc.)" />
+               </children>
+            </Pane>
+            <Pane layoutX="29.0" layoutY="284.0" prefHeight="107.0" prefWidth="870.0">
+               <children>
+                  <TextField fx:id="ptDepart" layoutX="264.0" layoutY="81.0" promptText="pointDepart" />
+                  <TextField fx:id="ptArrive" layoutX="435.0" layoutY="81.0" promptText="pointArrive" />
+                  <ChoiceBox fx:id="chToleranceTime" layoutX="568.0" layoutY="29.0" prefHeight="25.0" prefWidth="157.0">
+                      
+                  </ChoiceBox>
+                  <JFXTimePicker fx:id="timePicker" defaultColor="#ff3c3c" layoutX="118.0" layoutY="26.0" />
+                  <JFXDatePicker fx:id="datepicker" defaultColor="#ff3c3c" layoutX="338.0" layoutY="26.0" />
+               </children>
+            </Pane>
+            <Label layoutX="407.0" layoutY="463.0" text="Prix : ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbPrix" layoutX="448.0" layoutY="465.0" text="______DT" />
+         </children></AnchorPane>
+      <Label layoutX="371.0" layoutY="18.0" text="Demande d'envoi de colis" textFill="#ff3c3c">
+         <font>
+            <Font name="Dubai Regular" size="28.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

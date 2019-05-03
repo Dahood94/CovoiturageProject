@@ -34,13 +34,13 @@ public class Colis {
     private Timestamp datePublication ;
     private String pointDepart;
     private String pointArrive;
-     private boolean toleranceTime;
+     private String toleranceTime; //(tbadlet)
 //caractérestique de l'annonce________________________________________________________________________________________________
 
     public Colis() {
     }
      
-    public Colis(int idColis, double hauteur, double largeur, double longueur, double poids, UnitePoids unite, TypeColis typeColis, String description, double prix, int idMembre, Timestamp dateDepart, Timestamp datePublication, String pointDepart, String pointArrive, boolean toleranceTime) {
+    public Colis(int idColis, double hauteur, double largeur, double longueur, double poids, UnitePoids unite, TypeColis typeColis, String description, double prix, int idMembre, Timestamp dateDepart, Timestamp datePublication, String pointDepart, String pointArrive, String toleranceTime) {
         this.idColis = idColis;
         this.hauteur = hauteur;
         this.largeur = largeur;
@@ -58,7 +58,7 @@ public class Colis {
         this.toleranceTime = toleranceTime;
     }
 
-    public Colis(double hauteur, double largeur, double longueur, double poids, UnitePoids unite, TypeColis typeColis, String description, double prix, int idMembre, Timestamp dateDepart, Timestamp datePublication, String pointDepart, String pointArrive, boolean toleranceTime) {
+    public Colis(double hauteur, double largeur, double longueur, double poids, UnitePoids unite, TypeColis typeColis, String description, double prix, int idMembre, Timestamp dateDepart, Timestamp datePublication, String pointDepart, String pointArrive, String toleranceTime) {
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.longueur = longueur;
@@ -131,7 +131,7 @@ public class Colis {
         return pointArrive;
     }
 
-    public boolean isToleranceTime() {
+    public String isToleranceTime() {
         return toleranceTime;
     }
 
@@ -191,7 +191,7 @@ public class Colis {
         this.pointArrive = pointArrive;
     }
 
-    public void setToleranceTime(boolean toleranceTime) {
+    public void setToleranceTime(String toleranceTime) {
         this.toleranceTime = toleranceTime;
     }
 
